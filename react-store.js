@@ -11,44 +11,34 @@ export const combineReducers = (reducers /* Map<key, reducer> */) => (state, act
   for (let key in reducers) {
     let reducer = reducers[key]
     const part = state && state[key]
-    newState[key] = reducer(part, action)
+    newState[key] = reducer(part, action, state)
   }
-  console.log("NEW STATE: ", newState)
+  /* TODO: temporaneo per gli sviluppi */ if (process.env.NODE_ENV === 'development') console.log("NEW STATE: ", newState)
   return newState
 }
 
 const makeUseStore = Store => () => useContext(Store)
 
-const makeUseState = Store => () => {
-  const { state } = useContext(Store)
-  return state
-}
+const makeUseOnlyState = Store => () => useContext(Store)[0]
 
-const makeUseDispatch = Store => () => {
-  const { dispatch } = useContext(Store)
-  return dispatch
-}
+const makeUseOnlyDispatch = Store => () => useContext(Store)[1]
 
-/* const makeDispatchAction = Store => action => {
-  const { dispatch } = useContext(Store)
-  dispatch(action)
-} */
-
-function useInitializer(reducer, initialState) {
-  const [state, dispatch] = useReducer(reducer, initialState, initialArgs => reducer(initialArgs, storeInitAction()))
-  return { state, dispatch }
-}
+// const makeDispatchAction = Store => action => {
+//   const { dispatch } = useContext(Store)
+//   dispatch(action)
+// }
 
 const createProvider = (Store, reducer, initialState) => ({ children }) => {
-  return <Store.Provider value={useInitializer(reducer, initialState)}>{children}</Store.Provider>
+  const init = initialArgs => reducer(initialArgs, storeInitAction())
+  return <Store.Provider value={useReducer(reducer, initialState, init)}>{children}</Store.Provider>
 }
 
 export default function createStore(reducer, initialState) {
   const Store = createContext()
   const StoreProvider = createProvider(Store, reducer, initialState)
   const useStore = makeUseStore(Store)
-  const useOnlyState = makeUseState(Store)
-  const useOnlyDispatch = makeUseDispatch(Store)
+  const useOnlyState = makeUseOnlyState(Store)
+  const useOnlyDispatch = makeUseOnlyDispatch(Store)
   // const dispatchAction = makeDispatchAction(Store)
   return {
     Store,
