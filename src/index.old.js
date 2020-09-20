@@ -19,14 +19,14 @@ export const combineReducers = (reducers /* Map<key, reducer> */) => (state, act
 
 const makeUseStore = Store => () => useContext(Store)
 
-const makeUseOnlyState = Store => () => useContext(Store)[0]
+const makeUseStoreSelector = useStore => (selector) => {
+  const [state, dispatch] = useStore()
+  return [selector(state), dispatch]
+}
 
-const makeUseOnlyDispatch = Store => () => useContext(Store)[1]
+const makeUseOnlyState = useStore => () => useStore()[0]
 
-// const makeDispatchAction = Store => action => {
-//   const { dispatch } = useContext(Store)
-//   dispatch(action)
-// }
+const makeUseOnlyDispatch = useStore => () => useStore()[1]
 
 const createProvider = (Store, reducer, initialState) => ({ children }) => {
   const init = initialArgs => reducer(initialArgs, storeInitAction())
@@ -37,15 +37,15 @@ export default function createStore(reducer, initialState) {
   const Store = createContext()
   const StoreProvider = createProvider(Store, reducer, initialState)
   const useStore = makeUseStore(Store)
-  const useOnlyState = makeUseOnlyState(Store)
-  const useOnlyDispatch = makeUseOnlyDispatch(Store)
-  // const dispatchAction = makeDispatchAction(Store)
+  const useStoreSelector = makeUseStoreSelector(useStore)
+  const useOnlyState = makeUseOnlyState(useStore)
+  const useOnlyDispatch = makeUseOnlyDispatch(useStore)
   return {
     Store,
     StoreProvider,
     useStore,
+    useStoreSelector,
     useOnlyState,
     useOnlyDispatch
-    // dispatchAction
   }
 }

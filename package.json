@@ -1,0 +1,58 @@
+{
+  "name": "@pm/reactjs-store",
+  "version": "1.0.0",
+  "description": "A React.js store made with useContext and useReducer like redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "increment-version:patch": "npm version patch -m \"Upgrade to %s for the release\"",
+    "increment-version:minor": "npm version minor -m \"Upgrade to %s for the release\"",
+    "increment-version:major": "npm version major -m \"Upgrade to %s for the release\"",
+    "build": "rimraf build && cross-env NODE_ENV=production babel src/ --out-dir ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmarino84/react-store.git"
+  },
+  "keywords": [
+    "reactjs",
+    "store",
+    "useContext",
+    "useReducer"
+  ],
+  "author": "Pietro Marino <pietro.marino_84@hotmail.it>",
+  "license": "MIT",
+  "private": "true",
+  "bugs": {
+    "url": "https://github.com/pmarino84/react-store/issues"
+  },
+  "homepage": "https://github.com/pmarino84/react-store#readme",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "rimraf": "^3.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

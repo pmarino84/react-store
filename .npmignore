@@ -1,0 +1,14 @@
+node_modules
+.editorconfig
+.vscode
+.gitignore
+.babelrc
+.eslintrc
+.eslintignore
+webpack*
+src
+test
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
