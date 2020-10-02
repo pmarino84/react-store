@@ -16,7 +16,7 @@ describe('createAction', () => {
   })
 
   test('return a function with only give action type', () => {
-    expect(() => createAction('azione')).toEqual(expect.any(Function))
+    expect(createAction('azione')).toEqual(expect.any(Function))
   })
 
   test('return a function with custom payload factory', () => {
