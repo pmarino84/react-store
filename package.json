@@ -4,11 +4,11 @@
   "description": "A React.js store made with useContext and useReducer like redux",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "increment-version:patch": "npm version patch -m \"Upgrade to %s for the release\"",
     "increment-version:minor": "npm version minor -m \"Upgrade to %s for the release\"",
     "increment-version:major": "npm version major -m \"Upgrade to %s for the release\"",
-    "build": "rimraf build && cross-env NODE_ENV=production babel src/ --out-dir ."
+    "build": "rimraf build && cross-env NODE_ENV=production babel src/ --out-dir build"
   },
   "repository": {
     "type": "git",
@@ -45,10 +45,14 @@
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
+    "jest": "^26.4.2",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.3",
+    "react-test-renderer": "^16.13.1",
     "rimraf": "^3.0.2"
   },
   "peerDependencies": {
