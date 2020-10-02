@@ -1,6 +1,6 @@
-import handlerTypeToActionTypes from './utils/handlerTypeToActionTypes'
+import splitActionType from './utils/splitActionType'
 
 export default function handleAction(type, reducer, defaultState) {
-  const actionTypes = handlerTypeToActionTypes(type)
-  return (state = defaultState, action, globalState) => actionTypes.includes(action.type) ? reducer(state, action, globalState) : state
+  const actionTypes = splitActionType(type)
+  return (state = defaultState, action) => actionTypes.includes(action.type) ? reducer(state, action) : state
 }

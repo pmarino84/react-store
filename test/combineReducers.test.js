@@ -5,7 +5,7 @@ describe('combineReducers', () => {
     expect(combineReducers()).toEqual(expect.any(Function))
   })
   
-  test('return a function', () => {
+  test('return a correct new state', () => {
     const prevState = {}
     const action = { type: 'action', payload: 1 }
     const nextState = { one: { data: 1 } }

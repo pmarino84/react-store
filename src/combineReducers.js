@@ -14,7 +14,7 @@ export default function combineReducers(reducers /* Map<key, reducer> */) {
     for (let key in reducers) {
       let reducer = reducers[key]
       const part = state && state[key]
-      newState[key] = reducer(part, action, state)
+      newState[key] = reducer(part, action)
     }
     devLog('new state: ', clone(newState))
     return newState

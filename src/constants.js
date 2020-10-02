@@ -1,4 +1,4 @@
-export const STORE_INIT = '@@STORE_INIT'
+export const STORE_INIT = '@@PM_REACT_STORE_INIT'
 
 export const ACTIONS_SEPARATOR = '|'
 
