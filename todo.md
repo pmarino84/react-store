@@ -1,7 +1,7 @@
 # TODO
 
 [ ] comments
-[ ] test
+[x] test
 [ ] examples
 [ ] autodeploy
 [ ] async action (dispatch)

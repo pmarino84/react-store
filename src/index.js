@@ -29,11 +29,11 @@ export default function createStore(reducer, initialState /* optional */) {
   const useOnlyState = makeUseOnlyState(useStore)
   const useOnlyDispatch = makeUseOnlyDispatch(useStore)
   return {
-    Store,
-    StoreProvider: Provider,
+    // Store,
+    Provider,
     Consumer: Store.Consumer,
     useStore,
-    useStoreSelector,
+    useSelector: useStoreSelector,
     useOnlyState,
     useOnlyDispatch
   }
