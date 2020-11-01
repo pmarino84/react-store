@@ -18,7 +18,6 @@ const makeUseOnlyDispatch = useStore => () => useStore()[1]
 const createProvider = (StoreProvider, reducer, initialState) => ({ children }) => {
   const initializer = initialArgs => reducer(initialArgs, storeInitAction())
   return <StoreProvider value={useReducer(reducer, initialState, initializer)}>{children}</StoreProvider>
-  // return <StoreProvider value={initialState ? useReducer(reducer, initialState) : useReducer(reducer, undefined, initializer)}>{children}</StoreProvider>
 }
 
 export default function createStore(reducer, initialState /* optional */) {
