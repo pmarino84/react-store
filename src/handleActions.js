@@ -1,3 +1,4 @@
+import ArgumentsLengthError from './errors/ArgumentsLengthError'
 import splitActionType from './utils/splitActionType'
 
 function handlersToReducer(handlers) {
@@ -14,6 +15,7 @@ function handlersToReducer(handlers) {
 }
 
 export default function handleActions(handlers /* Map<actionTypes, handler> */, defaultState) {
+  if(arguments.length !== 2) throw new ArgumentsLengthError(2)
   const reducer = handlersToReducer(handlers)
   return (state = defaultState, action) => reducer(state, action)
 }

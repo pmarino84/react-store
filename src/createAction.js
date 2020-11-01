@@ -4,8 +4,7 @@ import ShouldGiveActionTypeError from './errors/ShouldGiveActionTypeError'
 function createPayloadFactory(factory) {
   let makePayload = null
   if (factory) {
-    const payloadFactoryType = typeof factory
-    if (payloadFactoryType !== 'function') throw new PayloadFactoryShouldBeAFunctionError()
+    if (typeof factory !== 'function') throw new PayloadFactoryShouldBeAFunctionError()
     makePayload = factory
   } else {
     makePayload = (value) => value

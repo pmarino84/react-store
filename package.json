@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "increment-version:patch": "npm version patch -m \"Upgrade to %s for the release\"",
-    "increment-version:minor": "npm version minor -m \"Upgrade to %s for the release\"",
-    "increment-version:major": "npm version major -m \"Upgrade to %s for the release\"",
-    "build": "rimraf build && cross-env NODE_ENV=production babel src/ --out-dir build"
+    "increment-version:patch": "npm version patch -m \"Upgrade (patch) to %s for the release\"",
+    "increment-version:minor": "npm version minor -m \"Upgrade (minor) to %s for the release\"",
+    "increment-version:major": "npm version major -m \"Upgrade (major) to %s for the release\"",
+    "build": "rimraf build && cross-env NODE_ENV=production babel src/ --out-dir build",
+    "prerelease": "npm test",
+    "release": "npm run increment-version:patch",
+    "postrelease": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -17,12 +20,12 @@
   "keywords": [
     "reactjs",
     "store",
+    "state",
     "useContext",
     "useReducer"
   ],
   "author": "Pietro Marino <pietro.marino_84@hotmail.it>",
   "license": "MIT",
-  "private": "true",
   "bugs": {
     "url": "https://github.com/pmarino84/react-store/issues"
   },
@@ -50,6 +53,7 @@
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "jest": "^26.4.2",
+    "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.3",
     "react-test-renderer": "^16.13.1",
