@@ -11,9 +11,7 @@ const makeUseStoreSelector = useStore => (selector) => {
   return [selector(state), dispatch]
 }
 
-const makeUseOnlyState = useStore => () => useStore()[0]
-
-const makeUseOnlyDispatch = useStore => () => useStore()[1]
+const makeUseDispatch = useStore => () => useStore()[1]
 
 const createProvider = (StoreProvider, reducer, initialState) => ({ children }) => {
   const initializer = initialArgs => reducer(initialArgs, storeInitAction())
@@ -25,15 +23,13 @@ export default function createStore(reducer, initialState /* optional */) {
   const Provider = createProvider(Store.Provider, reducer, initialState)
   const useStore = makeUseStore(Store)
   const useStoreSelector = makeUseStoreSelector(useStore)
-  const useOnlyState = makeUseOnlyState(useStore)
-  const useOnlyDispatch = makeUseOnlyDispatch(useStore)
+  const useDispatch = makeUseDispatch(useStore)
   return {
     // Store,
     Provider,
     Consumer: Store.Consumer,
     useStore,
     useSelector: useStoreSelector,
-    useOnlyState,
-    useOnlyDispatch
+    useDispatch
   }
 }

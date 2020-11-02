@@ -106,13 +106,9 @@ This function create for you:
   ```javascript
   const [state, dispatch] = useSelector(state => state['key']);
   ```
-* useOnlyState hook to extract only the state from useStore, if help you
+* useDispatch hook to extract only the dispatcher from useStore, if help you
   ```javascript
-  const state = useOnlyState();
-  ```
-* useOnlyDispatch hook to extract only the dispatcher from useStore, if help you
-  ```javascript
-  const dispatch = useOnlyDispatch();
+  const dispatch = useDispatch();
   ```
 
 So, with **only one line of code** you can create them all, like this:
@@ -125,8 +121,7 @@ So, with **only one line of code** you can create them all, like this:
     Consumer,
     useStore,
     useSelector,
-    useOnlyState,
-    useOnlyDispatch
+    useDispatch
   } = createStore(myReducer);
 ```
 
@@ -224,8 +219,7 @@ export const {
   Consumer,
   useStore,
   useSelector,
-  useOnlyState,
-  useOnlyDispatch
+  useDispatch
 } = createStore(myReducer);
 
 // useful selectors

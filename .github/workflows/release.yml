@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  #job key. The key is displayed as the job name when a job name is not provided
+  release:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # check out a copy of repo on the chine
+      - name: Checkout code
+        uses: actions/chekout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Test it
+        run: npm test
+      - name: Build time
+        run: npm run build
+      - name: The end
+        run: npm publish
