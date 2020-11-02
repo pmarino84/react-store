@@ -3,11 +3,15 @@ node_modules
 .vscode
 .gitignore
 .babelrc
+babel.config.js
 .eslintrc
 .eslintignore
 webpack*
 src
 test
+examples
+
+todo.md
 
 npm-debug.log*
 yarn-debug.log*

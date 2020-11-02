@@ -6,10 +6,9 @@ module.exports = api => {
   if (isTest) {
     presets.push(['@babel/preset-env', { targets: { node: 'current' } }]);
   } else {
+    presets.push(["@babel/preset-env"]);
     ignore = [
-      'src/stories/**/*',
-      'src/**/*.test.js',
-      'src/**/*.spec.js'
+      'src/**/*.test.js'
     ];
   }
 
