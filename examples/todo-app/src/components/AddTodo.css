@@ -1,0 +1,30 @@
+.add-todo-container {
+  box-sizing: border-box;
+  background-color: #282c34;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: .5rem 1rem;
+}
+
+.add-todo-label {
+  box-sizing: border-box;
+  margin-right: .75rem;
+}
+
+.add-todo-text {
+  box-sizing: border-box;
+  background-color: #40444c;
+  color: #ffffff;
+  outline: none;
+  margin-right: .75rem;
+  border: 1px solid #40444c;
+  min-height: 25px;
+}
+
+.btn--add-todo {
+  background-color: #61dafb;
+  padding: .25rem .5rem;
+  font-size: .8rem;
+}

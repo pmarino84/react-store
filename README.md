@@ -10,12 +10,13 @@ Like redux the initial state is created by the reducers registered by you, the l
 
 Inside of your project install the library with the following command:
 
-```
+```bash
 npm install --save @pm/reactjs-store
 ```
+
 or
 
-```
+```bash
 yarn add @pm/reactjs-store
 ```
 
@@ -96,17 +97,25 @@ Now, you have three method to create all reducer you need:
 
 Finally, you can create the store and some utilities you need with `createStore` function.
 This function create for you:
+
 * the Provider component
+
 * the Consumer component
+
 * useStore hook to use state and the dispatcher within your functional component 
+
   ```javascript
   const [state, dispatch] = useStore();
   ```
+
 * useSelector hook to extract a portion of the state
+
   ```javascript
   const [state, dispatch] = useSelector(state => state['key']);
   ```
+
 * useDispatch hook to extract only the dispatcher from useStore, if help you
+
   ```javascript
   const dispatch = useDispatch();
   ```
@@ -128,6 +137,7 @@ So, with **only one line of code** you can create them all, like this:
 Last but not least, for example we use the store created above, in your application:
 
 App.js
+
 ```javascript
 import React from "react";
 import { Provider } from "wherever you have created your store";
@@ -142,6 +152,7 @@ export default function App () {
 ```
 
 Counter.js
+
 ```javascript
 import React from "react";
 import { useStore } from "wherever you have created your store";
@@ -227,6 +238,10 @@ export const useOneSelector = () => useSelector(state => state['one']);
 export const useTwoSelector = () => useSelector(state => state['two']);
 export const useThreeSelector = () => useSelector(state => state['three']);
 ```
+
+## Examples
+
+Inside the [examples](./examples) folder you can find a [todo-app](./examples/todo-app) example that use this library.
 
 ## License
 
