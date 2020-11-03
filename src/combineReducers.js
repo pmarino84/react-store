@@ -2,7 +2,7 @@ const clone = (obj) => JSON.parse(JSON.stringify(obj))
 
 const NODE_ENV = (process && process.env && process.env.NODE_ENV) || 'production';
 
-const LOG_MSG_PREFIX = '[@pm/reactjs-store] - '
+const LOG_MSG_PREFIX = '[@pietro-marino/reactjs-store] - '
 
 /* Logga il messaggio passato solo nell'ambiente di sviluppo */
 const devLog = (msg, obj) => (NODE_ENV === 'development') && console.log(LOG_MSG_PREFIX + msg, clone(obj))

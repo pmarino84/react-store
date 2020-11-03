@@ -4,9 +4,11 @@ module.exports = api => {
   const presets = [];
   if (isTest) {
     presets.push(['@babel/preset-env', { targets: { node: 'current' } }]);
+  } else {
+    presets.push(['@babel/preset-env']);
   }
 
-  presets.push(['react-app', { 'absoluteRuntime': false }]);
+  presets.push(['@babel/preset-react']);
 
   return {
     presets

@@ -1,5 +1,5 @@
 {
-  "name": "@pm/reactjs-store",
+  "name": "@pietro-marino/reactjs-store",
   "version": "1.0.0",
   "description": "A React.js store made with useContext and useReducer like redux",
   "main": "index.js",
@@ -8,10 +8,12 @@
     "increment-version:patch": "npm version patch -m \"Upgrade (patch) to %s for the release\"",
     "increment-version:minor": "npm version minor -m \"Upgrade (minor) to %s for the release\"",
     "increment-version:major": "npm version major -m \"Upgrade (major) to %s for the release\"",
-    "build": "rimraf build && cross-env NODE_ENV=production babel src/ --out-dir build",
+    "prebuild": "npm run clear",
+    "build": "cross-env NODE_ENV=production babel src/ --out-dir ./",
     "prerelease": "npm test",
     "release": "npm run increment-version:patch",
-    "postrelease": "git push --follow-tags"
+    "postrelease": "git push --follow-tags",
+    "clear": "rimraf errors utils ./combineActions.js ./combineReducers.js ./constants.js ./createAction.js ./handleAction.js ./handleActions.js ./index.js"
   },
   "repository": {
     "type": "git",
@@ -49,17 +51,24 @@
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
     "babel-jest": "^26.6.2",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "jest": "^26.6.2",
+    "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "^3.4.4",
     "react-test-renderer": "^16.14.0",
     "rimraf": "^3.0.2"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  }
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "dependencies": {}
 }
