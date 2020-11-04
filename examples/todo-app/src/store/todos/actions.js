@@ -1,4 +1,4 @@
-import createAction from '@pm/reactjs-store/createAction';
+import createAction from '@pietro-marino/reactjs-store/createAction';
 
 export const ADD_TODO = 'ADD_TODO';
 export const REMOVE_TODO = 'REMOVE_TODO';

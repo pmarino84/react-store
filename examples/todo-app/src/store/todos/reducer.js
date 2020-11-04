@@ -1,4 +1,4 @@
-import handleActions from "@pm/reactjs-store/handleActions";
+import handleActions from "@pietro-marino/reactjs-store/handleActions";
 import { ADD_TODO, COMPLETE_TODO, REMOVE_TODO } from "./actions";
 
 function addTodo(state, action) {

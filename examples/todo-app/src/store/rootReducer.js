@@ -1,4 +1,4 @@
-import combineReducers from "@pm/reactjs-store/combineReducers";
+import combineReducers from "@pietro-marino/reactjs-store/combineReducers";
 import todosReducer from "./todos/reducer";
 
 const rootReducer = combineReducers({

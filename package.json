@@ -1,5 +1,5 @@
 {
-  "name": "@pm/reactjs-store",
+  "name": "@pietro-marino/reactjs-store",
   "version": "1.0.1",
   "description": "A React.js store made with useContext and useReducer like redux",
   "main": "index.js",
