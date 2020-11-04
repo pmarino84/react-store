@@ -1,5 +1,5 @@
 {
-  "name": "@pietro-marino/reactjs-store",
+  "name": "@pm/reactjs-store",
   "version": "1.0.1",
   "description": "A React.js store made with useContext and useReducer like redux",
   "main": "index.js",
@@ -20,11 +20,14 @@
     "url": "git+https://github.com/pmarino84/react-store.git"
   },
   "keywords": [
+    "react",
     "reactjs",
     "store",
     "state",
     "useContext",
-    "useReducer"
+    "useReducer",
+    "redux",
+    "redux-actions"
   ],
   "author": "Pietro Marino <pietro.marino_84@hotmail.it>",
   "license": "MIT",

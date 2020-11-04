@@ -1,4 +1,4 @@
-import createStore from "@pietro-marino/reactjs-store/build";
+import createStore from "@pm/reactjs-store";
 import rootReducer from "./rootReducer";
 
 export const {

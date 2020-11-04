@@ -11,13 +11,13 @@ Like redux the initial state is created by the reducers registered by you, the l
 Inside of your project install the library with the following command:
 
 ```bash
-npm install --save @pietro-marino/reactjs-store
+npm install --save @pm/reactjs-store
 ```
 
 or
 
 ```bash
-yarn add @pietro-marino/reactjs-store
+yarn add @pm/reactjs-store
 ```
 
 ## How to use
@@ -25,7 +25,7 @@ yarn add @pietro-marino/reactjs-store
 Create the actions with the `createAction` function, like this:
 
 ```javascript
-import createAction from "@pietro-marino/reactjs-store/createAction";
+import createAction from "@pm/reactjs-store/createAction";
 
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
@@ -61,7 +61,7 @@ Now, you have three method to create all reducer you need:
 2. if the reducer only handles an action you can create it by calling the built-in function called `handleAction`:
 
   ```javascript
-  import handleAction from "@pietro-marino/reactjs-store/handleAction";
+  import handleAction from "@pm/reactjs-store/handleAction";
   
   const INITIAL_STATE = { value: 0 };
 
@@ -75,7 +75,7 @@ Now, you have three method to create all reducer you need:
 3. to avoid using the switch you can use the `handleActions` function:
 
   ```javascript
-  import handleActions from "@pietro-marino/reactjs-store/handleActions";
+  import handleActions from "@pm/reactjs-store/handleActions";
   
   const INITIAL_STATE = { value: 0 };
   
@@ -123,7 +123,7 @@ This function create for you:
 So, with **only one line of code** you can create them all, like this:
 
 ```javascript
-  import createStore from "@pietro-marino/reactjs-store";
+  import createStore from "@pm/reactjs-store";
 
   export const {
     Provider,
@@ -182,8 +182,8 @@ export default function Counter () {
 You can combine actions to simplify the reducers:
 
 ```javascript
-import handleActions from "@pietro-marino/reactjs-store/handleActions";
-import combineActions from "@pietro-marino/reactjs-store/combineActions";
+import handleActions from "@pm/reactjs-store/handleActions";
+import combineActions from "@pm/reactjs-store/combineActions";
 
 const INITIAL_STATE = { value: 0 };
 
@@ -211,7 +211,7 @@ export default myReducer;
 Combine reducers to a root reducer, like this:
 
 ```javascript
-import combineReducers from "@pietro-marino/reactjs-store/combineReducers";
+import combineReducers from "@pm/reactjs-store/combineReducers";
 
 const reducerOne = (state, action) => {};
 const reducerTwo = (state, action) => {};
@@ -223,7 +223,7 @@ const rootReducer = combineReducers({
   'three': reducerThree
 });
 
-import createStore from "@pietro-marino/reactjs-store";
+import createStore from "@pm/reactjs-store";
 
 export const {
   Provider,
@@ -245,4 +245,4 @@ Inside the [examples](./examples) folder you can find a [todo-app](./examples/to
 
 ## License
 
-@pietro-marino/reactjs-store is [MIT licensed](./LICENSE).
+@pm/reactjs-store is [MIT licensed](./LICENSE).
