@@ -141,6 +141,7 @@ App.js
 ```javascript
 import React from "react";
 import { Provider } from "wherever you have created your store";
+import Counter from "./Counter";
 
 export default function App () {
   return (
@@ -212,6 +213,7 @@ Combine reducers to a root reducer, like this:
 
 ```javascript
 import combineReducers from "@pietro-marino/reactjs-store/combineReducers";
+import createStore from "@pietro-marino/reactjs-store";
 
 const reducerOne = (state, action) => {};
 const reducerTwo = (state, action) => {};
@@ -222,8 +224,6 @@ const rootReducer = combineReducers({
   'two': reducertwo,
   'three': reducerThree
 });
-
-import createStore from "@pietro-marino/reactjs-store";
 
 export const {
   Provider,
