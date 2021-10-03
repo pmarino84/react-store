@@ -58,7 +58,7 @@ Now, you have three method to create all reducer you need:
     }
   ```
 
-2. if the reducer only handles an action you can create it by calling the built-in function called `handleAction`:
+2. if the reducer only handle one action you can create it by calling the built-in function called `handleAction`:
 
   ```javascript
   import handleAction from "@pietro-marino/reactjs-store/handleAction";
@@ -72,7 +72,7 @@ Now, you have three method to create all reducer you need:
   export default myReducer;
   ```
 
-3. to avoid using the switch you can use the `handleActions` function:
+3. to avoid using the switch-case you can use the `handleActions` function:
 
   ```javascript
   import handleActions from "@pietro-marino/reactjs-store/handleActions";
