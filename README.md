@@ -160,8 +160,8 @@ import { increment, decrement } from "wherever you have created your actions";
 
 export default function Counter () {
   const [state, dispatch] = useStore();
-  const incrementCount = dispatch(increment());
-  const decrementCount = dispatch(decrement());
+  const incrementCount = () => dispatch(increment());
+  const decrementCount = () => dispatch(decrement());
 
   return (
     <div className="counter">
